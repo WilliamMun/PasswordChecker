@@ -2,6 +2,28 @@
 const passwordInput = document.getElementById('passwordInput');
 const strengthBar = document.getElementById('strengthBar');
 const feedbackText = document.getElementById('feedbackText');
+const togglePassword = document.getElementById('togglePassword');
+const eyeOpen = document.getElementById('eyeOpen');
+const eyeClosed = document.getElementById('eyeClosed');
+
+togglePassword.addEventListener('click', function () {
+  // Check if the input is currently set to 'password' (hidden)
+  const isPassword = passwordInput.getAttribute('type') === 'password';
+  
+  if (isPassword) {
+    // 1. Show the text
+    passwordInput.setAttribute('type', 'text');
+    // 2. Show the Open Eye, Hide the Closed Eye
+    eyeOpen.style.display = 'block';
+    eyeClosed.style.display = 'none';
+  } else {
+    // 1. Hide the text
+    passwordInput.setAttribute('type', 'password');
+    // 2. Show the Closed Eye, Hide the Open Eye
+    eyeOpen.style.display = 'none';
+    eyeClosed.style.display = 'block';
+  }
+});
 
 // Listen for typing in the password box
 passwordInput.addEventListener('input', function() {

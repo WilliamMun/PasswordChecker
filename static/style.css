@@ -16,15 +16,6 @@ body {
     width: 300px;
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Ensures padding doesn't mess up width */
-}
-
 /* The background of the progress bar */
 .strength-meter {
     width: 100%;
@@ -40,4 +31,42 @@ input {
     height: 100%;
     width: 0%; /* Starts at 0 width */
     transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.input-field {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+    position: relative;
+    width: 300px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 40px; 
+    box-sizing: border-box;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.input-field button {
+    position: absolute;
+    right: 10px; 
+    top: 50%; 
+    transform: translateY(-50%); 
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  
+    /* Added to perfectly center the SVG inside the button */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.input-field button:hover svg {
+  stroke: #000; 
 }
